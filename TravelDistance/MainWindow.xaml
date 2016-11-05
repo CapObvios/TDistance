@@ -1,0 +1,65 @@
+﻿<Window x:Name="key" x:Class="TravelDistance.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="TravelDistance" Height="416" Width="686.666" ResizeMode="CanMinimize">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="95*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="40*"/>
+            <RowDefinition Height="47*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="70*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox Height="30" HorizontalAlignment="Left" Margin="10,10,0,0"  Name="CityNameBox" VerticalAlignment="Top" Width="470" Grid.Row="1" Grid.Column="1" >
+
+
+            <TextBox.Resources>
+                <VisualBrush x:Key="HelpBrush" TileMode="None" Opacity="0.4" Stretch="None" AlignmentX="Left" >
+                    <VisualBrush.Visual>
+                        <TextBlock FontStyle="Normal"  Text="Where do you want to travel?" />
+                    </VisualBrush.Visual>
+                </VisualBrush>
+            </TextBox.Resources>
+            <TextBox.Style>
+                <Style TargetType="TextBox">
+                    <Style.Triggers>
+                        <Trigger Property="Text" Value="{x:Null}">
+                            <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
+                        </Trigger>
+                        <Trigger Property="Text" Value="">
+                            <Setter Property="Background" Value="{StaticResource HelpBrush}"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </TextBox.Style>
+
+        </TextBox>
+        
+        <Button Content="Go to that place!!!!!!" FontSize="25" Background="LawnGreen" HorizontalAlignment="Left" Name="ApplyButton" Height="50" Margin="10,10,0,0" Foreground="Red"  VerticalAlignment="Top" Width="650" Grid.Row="3" Click="ApplyButton_Click" Grid.ColumnSpan="2" >
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.5"/>
+            </Button.Effect>
+        </Button>
+
+        <TextBlock HorizontalAlignment="Left" Height="29" Margin="10,10,0,0" TextWrapping="Wrap" Name="CurrentCityBlock" VerticalAlignment="Top" Width="470" Grid.Column="1"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="left" Height="20" Margin="10,10,0,0" Grid.Row="5" Name="TextBlock1" TextWrapping="Wrap" VerticalAlignment="Top" Width="470"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="59,10,0,0" Grid.Row="5" TextWrapping="Wrap" Text="Distance from you is..." VerticalAlignment="Top" Width="121"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="8,10,0,0" Name="transportBlock" Grid.Row="6" TextWrapping="Wrap" Text="      Time to get there by car is..." VerticalAlignment="Top" Width="170"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Name="TextBlock2" Grid.Column="1" Margin="10,10,0,0" Grid.Row="6" Height="20" Width="470"/>
+        <RadioButton Content="By car" Grid.Column="1" IsChecked="True" HorizontalAlignment="Left" Height="15" Name="CarBut" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="90" Checked="RadioButton_Checked"/>
+        <RadioButton Content="By bicycle" Grid.Column="1" HorizontalAlignment="Left" Height="15" Name="BycicleBut" Margin="10,30,0,0" Grid.Row="2" VerticalAlignment="Top" Width="90" Checked="RadioButton_Checked_1"/>
+        <RadioButton Content="By foot" Grid.Column="1" HorizontalAlignment="Left" Height="15" Name="FootBut" Margin="10,50,0,0" Grid.Row="2" VerticalAlignment="Top" Width="90" Checked="RadioButton_Checked_2"/>
+        <TextBlock HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" Grid.Row="2" TextWrapping="Wrap" Text="How do you want to get there?" VerticalAlignment="Top" Width="169"/>
+        <TextBlock HorizontalAlignment="Left" Height="15" Margin="115,10,0,0" TextWrapping="Wrap" Text="You are in..." VerticalAlignment="Top" Width="65"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text=" You want to get to..." VerticalAlignment="Top" Margin="65,10,0,0" Grid.Row="4" Height="20" Width="115"/>
+        <TextBlock Grid.Column="1" HorizontalAlignment="Left" Height="20" Margin="10,10,0,0" Name="DestBlock" Grid.Row="4" TextWrapping="Wrap" VerticalAlignment="Top" Width="440"/>
+
+        
+    </Grid>
+</Window>
